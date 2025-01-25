@@ -1,18 +1,25 @@
 // seleziona gli elementi del DOM
+// seleziona il contenitore dove verranno inserite le cards
 const container = document.getElementById('container');
 
 
 
 
-// definisci l'endpoint
+// definisci l'endpoint da cui recuperare i dati delle immagini
 const apiEndpoint = 'https://lanciweb.github.io/demo/api/pictures/'
 
 
-
+// invoca funzione per generazione cards
 generateCards();
 
 
-// funzioni
+
+
+
+
+// ************************
+// FUNZIONI
+// ************************
 
 // funzione per generare le cards
 
@@ -25,10 +32,10 @@ function generateCards() {
             // logga oggetto di risposta per debug
             // console.log(responseObj);
 
-
+            // estrai la lista delle cards dalla risposta dell'API
             const cardsList = responseObj.data
 
-            // logga data per debug
+            // logga lista delle cards per debug
             console.log(cardsList);
 
 
@@ -60,11 +67,11 @@ function generateCards() {
 
         .catch(function (error) {
             // gestisci eventuali errori nella richiesta
-            console.error('Errore durante il recupero dell\'email:', error);
+            console.error('Errore durante il recupero dei dati:', error);
 
             // aggiungi messaggio di errore in pagina
-            outputList.innerHTML = `
-                        <li>404 | NOT FOUND</li>
+            container.innerHTML = `
+                        <h2 class="error">404 | NOT FOUND</h2>
                         `;
         });
 }

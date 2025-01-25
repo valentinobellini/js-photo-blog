@@ -1,3 +1,4 @@
+/* reset pagina */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 
 
 
-
+/* stile header */
 header {
     height: 200px;
     background-image: url(../img/wall.png);
@@ -16,6 +17,7 @@ header {
     font-family: 'Edu Tas Beginner', sans-serif;
 }
 
+/* stile titole pagina */
 header h1 {
     margin: auto;
     font-size: 80px;
@@ -23,18 +25,17 @@ header h1 {
 
 
 
-
-
+/* stile sezione main */
 main {
     background-image: url(../img/cork.png);
     background-size: auto;
-    
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+
+/* stile container */
 #container {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -47,7 +48,7 @@ main {
 }
 
 
-
+/* stile cards */
 .card {
     width: 400px;
     height: 480px;
@@ -62,6 +63,7 @@ main {
     box-shadow: 3px 3px 5px -3px #000000;
 }
 
+/* stile immagine pin */
 .pin {
     height: 40px;
     position: absolute;
@@ -70,6 +72,7 @@ main {
     transform: translateX(-50%);
 }
 
+/* stile container interno alle card */
 .innerContainer {
     display: flex;
     flex-direction: column;
@@ -77,16 +80,19 @@ main {
     justify-content: center;
 }
 
+/* stile immagini */
 .innerContainer img {
     width: 100%;
     height: 100%;
 }
 
+/* stile container dei testi */
 .textContainer {
     margin-top: 20px;
     width: 100%;
 }
 
+/* stile titolo immagini */
 .textContainer h5 {
     font-family: 'Sometype Mono', 'monospace';
     font-size: 18px;
@@ -94,12 +100,36 @@ main {
     font-weight: 300;
 }
 
+/* stile date */
 .textContainer h2 {
     text-transform: uppercase;
     margin-top: 5px;
     font-size: 25px;
     font-family: 'Edu Tas Beginner', sans-serif;
 }
+
+
+
+
+
+
+
+
+/*  stile del messaggio di errore */
+.error {
+    margin-top: 200px;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* ************************
@@ -125,4 +155,19 @@ main {
         width: 100%;
     }
 }
+
+
+
+.card:hover {
+    transform: rotate(15deg);
+    transition: transform 0.3s ease-in-out, z-index 0s;
+    z-index: 10;
+}
+
+.card:hover .pin {
+    display: none;
+}
+
+
+
 
