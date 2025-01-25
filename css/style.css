@@ -109,7 +109,17 @@ main {
 }
 
 
+/* effetto ratozione all'hover su imagini */
+.card:hover {
+    transform: rotate(10deg);
+    transition: transform 0.3s ease-in-out, z-index 0s;
+    z-index: 10;
+}
 
+/* rimuovi pin all'hover su immagine */
+.card:hover .pin {
+    display: none;
+}
 
 
 
@@ -158,15 +168,6 @@ main {
 
 
 
-.card:hover {
-    transform: rotate(15deg);
-    transition: transform 0.3s ease-in-out, z-index 0s;
-    z-index: 10;
-}
-
-.card:hover .pin {
-    display: none;
-}
 
 
 

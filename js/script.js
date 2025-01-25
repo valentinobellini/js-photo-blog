@@ -22,9 +22,9 @@ generateCards();
 // ************************
 
 // funzione per generare le cards
-
 function generateCards() {
 
+    
     // invia la richiesta GET all'API
     axios.get(apiEndpoint)
         .then(responseObj => {
