@@ -18,11 +18,7 @@ generateCards();
 
 
 
-
-
-// ************************
-// GESTIONE OVERLAY
-// ************************
+// gestione overlay
 
 //event listener che fa scomparire overlay al click
 closeButton.addEventListener('click', hideOverlay);
@@ -43,7 +39,11 @@ function generateCards() {
         .then(responseObj => {
 
             // estrai la lista delle cards dalla risposta dell'API
-            const cardsList = responseObj.data
+            const cardsList = responseObj.data;
+
+            // logga responsObjectp debug
+            console.log(responseObj);
+            
 
             // logga lista delle cards per debug
             console.log(cardsList);
@@ -60,7 +60,7 @@ function generateCards() {
                 <div class="card">
                     <img class="pin" src="./img/pin.svg" alt="">
                     <div class="innerContainer">
-                        <img class="image" src="${card.url}" alt="">
+                        <img class="image" src="${card.url}" alt="${card.title}">
                         <div class="textContainer">
                             <h5>${card.date}</h5>
                             <h2>${card.title}</h2>
@@ -102,16 +102,13 @@ function generateCards() {
 // funzione per far apparire overlay
 function showOverlay(imageUrl) {
     const imgOverlay = document.getElementById('imgOverlay');
-    imgOverlay.src = imageUrl; // Imposta l'URL dell'immagine nell'overlay
+    imgOverlay.src = imageUrl;
     overlay.classList.remove('inactive');
-    overlay.classList.add('active');
-
-}
+};
 
 
 //funzione per far scomparire overlay
 function hideOverlay() {
-    overlay.classList.remove('active');
     overlay.classList.add('inactive');
 
-}
+};
