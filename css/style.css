@@ -6,14 +6,18 @@
 }
 
 
-
+body {
+    background-image: url(../img/cork.png);
+    background-size: contain;
+    padding-bottom: 50px;
+}
 
 
 /* stile header */
 header {
-    height: 200px;
+    height: 120px;
     background-image: url(../img/wall.png);
-    background-size: auto;
+    background-size: cover;
     display: flex;
     justify-content: center;
     font-family: 'Edu Tas Beginner', sans-serif;
@@ -22,15 +26,13 @@ header {
 /* stile titole pagina */
 header h1 {
     margin: auto;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 
 
 /* stile sezione main */
 main {
-    background-image: url(../img/cork.png);
-    background-size: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,8 +42,7 @@ main {
 /* stile container */
 #container {
     margin-top: 50px;
-    margin-bottom: 50px;
-    width: 80%;
+    width: 85%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -63,11 +64,15 @@ main {
     align-items: flex-start;
     justify-content: flex-start;
     box-shadow: 3px 3px 5px -3px #000000;
+
+    transform: rotate(0deg); /* Posizione iniziale della card */
+    transition: transform 0.3s ease-in-out, z-index 0s;
+
 }
 
 /* stile immagine pin */
 .pin {
-    height: 40px;
+    height: 30px;
     position: absolute;
     top: -15px;
     left: 50%;
@@ -149,13 +154,19 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+}
+
+#imgOverlay {
+    max-width: 70%;
+    max-height: 70%;
 }
 
 
 .close {
     z-index: 200;
     font-size: 40px;
-    font-family: 'Edu Tas Beginner', sans-serif;
+    font-family: 'Sometype Mono', 'monospace';
     color: white;
     position: absolute;
     top: 20px;
@@ -182,29 +193,22 @@ main {
         MEDIA QUERY
 ************************ */
 
-@media screen and (max-width: 1024px) {
-    #container {
-        width: 85%;
-    }
-}
-
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
 
     header {
-        height: 160px;
+        height: 100px;
     }
 
     /* stile titole pagina */
     header h1 {
         margin: auto;
-        font-size: 60px;
+        font-size: 50px;
     }
 
     /* stile cards */
     .card {
-        width: 350px;
-        height: 430px;
+        width: 320px;
+        height: 410px;
     }
 
 

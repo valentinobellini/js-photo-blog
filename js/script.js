@@ -26,8 +26,8 @@ generateCards();
 
 
 
-//event listener che fa apparire overlay al click
-container.addEventListener('click', showOverlay);
+// //event listener che fa apparire overlay al click
+// container.addEventListener('click', showOverlay);
 
 //event listener che fa scomparire overlay al click
 closeButton.addEventListener('click', hideOverlay);
@@ -50,9 +50,6 @@ function generateCards() {
     axios.get(apiEndpoint)
         .then(responseObj => {
 
-            // logga oggetto di risposta per debug
-            // console.log(responseObj);
-
             // estrai la lista delle cards dalla risposta dell'API
             const cardsList = responseObj.data
 
@@ -61,8 +58,7 @@ function generateCards() {
 
 
             // cicla per ricavare ogni elemento dalla lista
-            for (let i = 0; i < cardsList.length; i++) {
-                let card = cardsList[i];
+            cardsList.forEach(card => {
 
                 console.log(card);
 
@@ -80,8 +76,18 @@ function generateCards() {
                     </div>
                 </div>
                 `
-            }
-            
+            })
+
+
+            // aggiungi event listener a tutte le immagini dopo che sono state generate
+            const images = document.querySelectorAll('.card .image');
+            images.forEach(image => {
+                image.addEventListener('click', function () {
+                    const imageUrl = image.src;
+                    showOverlay(imageUrl);
+                });
+            });
+
 
 
 
@@ -102,9 +108,12 @@ function generateCards() {
 
 
 // funzione per far apparire overlay
-function showOverlay() {
+function showOverlay(imageUrl) {
+    const imgOverlay = document.getElementById('imgOverlay');
+    imgOverlay.src = imageUrl; // Imposta l'URL dell'immagine nell'overlay
     overlay.classList.remove('inactive');
     overlay.classList.add('active');
+
 }
 
 
@@ -112,4 +121,5 @@ function showOverlay() {
 function hideOverlay() {
     overlay.classList.remove('active');
     overlay.classList.add('inactive');
+
 }
