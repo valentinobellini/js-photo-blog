@@ -2,6 +2,9 @@
 // seleziona il contenitore dove verranno inserite le cards
 const container = document.getElementById('container');
 
+const overlay = document.querySelector(".overlay");
+const closeButton = document.querySelector(".close");
+
 
 
 
@@ -18,13 +21,31 @@ generateCards();
 
 
 // ************************
+//GESTIONE OVERLAY
+// ************************
+
+
+
+//event listener che fa apparire overlay al click
+container.addEventListener('click', showOverlay);
+
+//event listener che fa scomparire overlay al click
+closeButton.addEventListener('click', hideOverlay);
+
+
+
+
+
+
+
+// ************************
 // FUNZIONI
 // ************************
 
 // funzione per generare le cards
 function generateCards() {
 
-    
+
     // invia la richiesta GET all'API
     axios.get(apiEndpoint)
         .then(responseObj => {
@@ -59,8 +80,11 @@ function generateCards() {
                     </div>
                 </div>
                 `
-
             }
+            
+
+
+
 
 
         })
@@ -74,4 +98,18 @@ function generateCards() {
                         <h2 class="error">404 | NOT FOUND</h2>
                         `;
         });
+};
+
+
+// funzione per far apparire overlay
+function showOverlay() {
+    overlay.classList.remove('inactive');
+    overlay.classList.add('active');
+}
+
+
+//funzione per far scomparire overlay
+function hideOverlay() {
+    overlay.classList.remove('active');
+    overlay.classList.add('inactive');
 }

@@ -7,6 +7,8 @@
 
 
 
+
+
 /* stile header */
 header {
     height: 200px;
@@ -122,9 +124,6 @@ main {
 }
 
 
-
-
-
 /*  stile del messaggio di errore */
 .error {
     margin-top: 200px;
@@ -139,6 +138,43 @@ main {
 
 
 
+/* gestione stile overlay */
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(30, 30, 30, 0.9);
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.close {
+    z-index: 200;
+    font-size: 40px;
+    font-family: 'Edu Tas Beginner', sans-serif;
+    color: white;
+    position: absolute;
+    top: 20px;
+    cursor: pointer;
+}
+
+.inactive {
+    display: none;
+}
+
+
+.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 
 
@@ -148,27 +184,28 @@ main {
 
 @media screen and (max-width: 1024px) {
     #container {
-        width: 80%; /* Riduzione ampiezza */
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    #container {
         width: 85%;
     }
 }
 
 
-@media screen and (max-width: 480px) {
-    #container {
-        width: 100%;
+@media screen and (max-width: 500px) {
+
+    header {
+        height: 160px;
     }
+
+    /* stile titole pagina */
+    header h1 {
+        margin: auto;
+        font-size: 60px;
+    }
+
+    /* stile cards */
+    .card {
+        width: 350px;
+        height: 430px;
+    }
+
+
 }
-
-
-
-
-
-
-
