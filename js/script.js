@@ -21,19 +21,11 @@ generateCards();
 
 
 // ************************
-//GESTIONE OVERLAY
+// GESTIONE OVERLAY
 // ************************
-
-
-
-// //event listener che fa apparire overlay al click
-// container.addEventListener('click', showOverlay);
 
 //event listener che fa scomparire overlay al click
 closeButton.addEventListener('click', hideOverlay);
-
-
-
 
 
 

@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-
+/* stile body */
 body {
     background-image: url(../img/cork.png);
     background-size: contain;
@@ -23,7 +23,7 @@ header {
     font-family: 'Edu Tas Beginner', sans-serif;
 }
 
-/* stile titole pagina */
+/* stile titolo pagina */
 header h1 {
     margin: auto;
     font-size: 70px;
@@ -157,12 +157,14 @@ main {
     position: fixed;
 }
 
+/* stile immagine in overlay */
 #imgOverlay {
     max-width: 70%;
     max-height: 70%;
 }
 
 
+/* stile pulsante close */
 .close {
     z-index: 200;
     font-size: 40px;
@@ -173,10 +175,10 @@ main {
     cursor: pointer;
 }
 
+/* gestione display overlay */
 .inactive {
     display: none;
 }
-
 
 .active {
     display: flex;
@@ -210,6 +212,4 @@ main {
         width: 320px;
         height: 410px;
     }
-
-
 }
